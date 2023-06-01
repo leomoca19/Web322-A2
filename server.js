@@ -19,7 +19,7 @@ app.use(express.static('/views'));
 
 //store return of listen if later closing the server explicitly: const server = app...
 app.listen(port, () => {
-    print(`Express http server listening on port ${port}`);
+    console.log(`Express http server listening on port ${port}`);
 });
 
 //Redirecting to "/about"
@@ -29,5 +29,5 @@ app.get('/', (req, res) => {
 
 //Serving about.html
 app.get('/about', (req, res)=>{
-    res.sendFile(`${__dirname}/views/about`);
+    res.sendFile(`${__dirname}/views/about.html`);
 });
