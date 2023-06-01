@@ -16,7 +16,7 @@ const port = process.env.PORT || 8080;
 // Middleware for automaticly serving static files in views
 app.use(express.static('views'));
 
-//store return of listen if later closing the server explicitly: const server = app...
+//Store return of listen if later closing the server explicitly: const server = app...
 const server = app.listen(port, () => {
     console.log(`Express http server listening on port ${port}`);
 });
