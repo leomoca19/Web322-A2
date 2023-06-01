@@ -14,7 +14,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 const print = console.log();
 
-// Middleware for automaticly serving static files
+// Middleware for automaticly serving static files in views
 app.use(express.static('/views'));
 
 //store return of listen if later closing the server explicitly: const server = app...
@@ -23,23 +23,31 @@ app.listen(port, () => {
 });
 
 //Redirecting to "/about"
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.redirect('/about');
 });
 
+
+// Route for redirecting to "/about"
+app.get('/', (req, res) => {
+    res.redirect('/about');
+  });
+
+
 //Serving about.html
 app.get('/about', (req, res)=>{
-    res.sendFile();
+    res.sendFile(`${__dirname}/views/about`);
 });
 
 /*
 --const express = require('express');
 --const app = express();
 --const port = process.env.PORT || 8080;*/
-/*// Middleware for serving static files
-app.use(express.static('public'));
+/*
+// Middleware for serving static files
+app.use(express.static('public'));*/
 
-// Route for redirecting to "/about"
+/*// Route for redirecting to "/about"
 app.get('/', (req, res) => {
   res.redirect('/about');
 });
@@ -66,7 +74,8 @@ function onHttpStart() {
   console.log("Express http server listening on: " + HTTP_PORT);
 }*/
 
-/*// setup a 'route' to listen on the default url path (http://localhost)
+/*
+// setup a 'route' to listen on the default url path (http://localhost)
 app.get("/", function(req,res){
     res.send("Hello World<br /><a href='/about'>Go to the about page</a>");
 });
