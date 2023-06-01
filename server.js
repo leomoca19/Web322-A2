@@ -19,7 +19,7 @@ app.use(express.static('views'));
 
 //store return of listen if later closing the server explicitly: const server = app...
 app.listen(port, () => {
-    console.log(`Express http server listening on port ${port}`);
+    print(`Express http server listening on port ${port}`);
 });
 
 //Redirecting to "/about"
