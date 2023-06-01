@@ -14,13 +14,22 @@ const app = express();
 const port = process.env.PORT || 8080;
 const print = console.log();
 
+// Middleware for automaticly serving static files
+app.use(express.static('/views'));
+
 //store return of listen if later closing the server explicitly: const server = app...
 app.listen(port, () => {
     print(`Express http server listening on port ${port}`);
 });
 
+//Redirecting to "/about"
 app.get('/', (req, res)=>{
     res.redirect('/about');
+});
+
+//Serving about.html
+app.get('/about', (req, res)=>{
+    res.sendFile();
 });
 
 /*
