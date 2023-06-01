@@ -8,5 +8,5 @@ h2{
 }
 
 .bg-dark {
-    background-color: #101010;
+    background-color: #101010 !important;
 }
