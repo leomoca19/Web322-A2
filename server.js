@@ -13,9 +13,6 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Middleware for automaticly serving static files in views
-// app.use(express.static('views'));
-
 // Middleware for automaticly serving static files in public
 app.use(express.static('public'));
 
