@@ -6,7 +6,7 @@
 * 
 *  Name: Leonardo de la Mora Caceres Student ID: 152877205 Date: 01-June-2023
 *
-*  Online (Cyclic) Link: ________________________________________________________
+*  Online (Cyclic) Link: https://busy-jade-hen-belt.cyclic.app/
 *
 ********************************************************************************/ 
 const express = require('express');
@@ -14,17 +14,19 @@ const app = express();
 const port = process.env.PORT || 8080;
 const print = console.log();
 
-//store return of listen if later closing the server explicitly
-//const server = app...
+//store return of listen if later closing the server explicitly: const server = app...
 app.listen(port, () => {
     print(`Express http server listening on port ${port}`);
 });
 
+app.get('/', (req, res)=>{
+    res.redirect('/about');
+});
 
-/*--const express = require('express');
+/*
+--const express = require('express');
 --const app = express();
 --const port = process.env.PORT || 8080;*/
-
 /*// Middleware for serving static files
 app.use(express.static('public'));
 
@@ -36,25 +38,26 @@ app.get('/', (req, res) => {
 // Route for serving the "about.html" file
 app.get('/about', (req, res) => {
   res.sendFile(__dirname + '/views/about.html');
-});
+});*/
 
+/*
 // Start the server
 app.listen(port, () => {
   console.log(`Express http server listening on port ${port}`);
 });*/
 
 
-
-/*var express = require("express");
+/*
+var express = require("express");
 var app = express();
 var HTTP_PORT = process.env.PORT || 8080;*/
-
-/*// call this function after the http server starts listening for requests
+/*
+// call this function after the http server starts listening for requests
 function onHttpStart() {
   console.log("Express http server listening on: " + HTTP_PORT);
-}
+}*/
 
-// setup a 'route' to listen on the default url path (http://localhost)
+/*// setup a 'route' to listen on the default url path (http://localhost)
 app.get("/", function(req,res){
     res.send("Hello World<br /><a href='/about'>Go to the about page</a>");
 });
