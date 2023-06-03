@@ -55,36 +55,35 @@ function getAllItems(){
             }
         });
     }
-    //get all published items + error handling
-    function getPublishedItems() {
-        return new Promise((resolve, reject) => {
-            const publishedItems = itemsData.filter(item => items.published);
-            if (publishedItems.length > 0) {
-                resolve(publishedItems);
-            } else {
-                reject("No results returned");
-            }
-        });
-    }
-    //get categories + error handling
-    function getCategories(){
-        return new Promise((resolve,reject)=> {
-            if(categoriesData.length>0){
-                resolve(categoriesData);
-            }else{
-                reject("No results returned")
-            }
-        });
-    }
-    
-    // Route functions
-        function allItems() {
-            return JSON.stringify(itemsData);
+//get all published items + error handling
+function getPublishedItems() {
+    return new Promise((resolve, reject) => {
+        const publishedItems = itemsData.filter(item => items.published);
+        if (publishedItems.length > 0) {
+            resolve(publishedItems);
+        } else {
+            reject("No results returned");
         }
-    
-        function allCategories() {
-        return JSON.stringify(categoriesData);
+    });
+}
+//get categories + error handling
+function getCategories(){
+    return new Promise((resolve,reject)=> {
+        if(categoriesData.length>0){
+            resolve(categoriesData);
+        }else{
+            reject("No results returned")
         }
+    });
+}
+// Route functions
+function allItems() {
+    return JSON.stringify(itemsData);
+}
+
+function allCategories() {
+return JSON.stringify(categoriesData);
+}
     
 module.exports = {
     initialize,
